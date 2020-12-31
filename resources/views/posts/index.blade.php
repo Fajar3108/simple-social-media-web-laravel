@@ -20,7 +20,7 @@
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="{{ url('/') }}">All Posts</a>
                         @foreach ($categories as $category)
-                        <a class="dropdown-item" href="{{ url('categories/' . $category->slug) }}">{{ $category->name }}</a>
+                        <a class="dropdown-item @if(request('category') == $category) active @endif" href="{{ url('categories/' . $category->slug) }}">{{ $category->name }}</a>
                         @endforeach
                     </div>
                 </div>
